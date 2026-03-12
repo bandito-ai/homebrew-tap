@@ -1,22 +1,22 @@
 class Bandito < Formula
   desc "CLI and TUI grading workbench for Bandito — contextual bandit optimizer for LLM selection"
   homepage "https://bandito.dev"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/bandito-ai/bandito/releases/download/v#{version}/bandito-aarch64-apple-darwin.tar.gz"
-      sha256 "7e2526b29e9a138eab19204a2e7d5d29a10b16c155ec0240a791ec69c07ff286"
+      url "https://github.com/bandito-ai/bandito/releases/download/v0.1.1/bandito-aarch64-apple-darwin.tar.gz"
+      sha256 "72696c637be5f7640fc37bb40c41287e278200a0091394dec76da53ace4e1512"
     else
-      url "https://github.com/bandito-ai/bandito/releases/download/v#{version}/bandito-x86_64-apple-darwin.tar.gz"
-      sha256 "fee1d9764ff1a5522ade1ee45658966daab6861d765c0e65f39a7d7096294f4d"
+      url "https://github.com/bandito-ai/bandito/releases/download/v0.1.1/bandito-x86_64-apple-darwin.tar.gz"
+      sha256 "b64391974d54309ecf0018394fee10312e0c5f16767b064d30e94c58dd90fe29"
     end
   end
 
   on_linux do
-    url "https://github.com/bandito-ai/bandito/releases/download/v#{version}/bandito-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "95654a8042a6126004ceaf3d8578a7ecf1c3c7c7b377876bb72cb28fdab7a30d"
+    url "https://github.com/bandito-ai/bandito/releases/download/v0.1.1/bandito-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "7d050ddf42bc0e7bc967f07dfa2e93f9312eef070cb5dee661076cf667acedc2"
   end
 
   def install
@@ -24,6 +24,6 @@ class Bandito < Formula
   end
 
   test do
-    assert_match "bandito", shell_output("#{bin}/bandito --version")
+    assert_match "bandito", shell_output("\#<built-in function bin>/bandito --version")
   end
 end
